@@ -5,9 +5,206 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #222;;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#header {
+  filter: brightness(85%);
+}
+#headerBGImg {
+  height:40vh;
+  background: #fff;
+  background-image: url("./reactLogo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30em;
+}
+
+h1, h2 {
+  color: white;
+  font-size: 2em;
+}
+
+
+#logo {
+  flex:1;
+  min-width: 4em;
+  max-width: 4em;
+  background: url("./reactLogo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display:none;
+}
+
+#navIcon {
+  flex:1;
+  min-width: 4em;
+  max-width: 4em;
+  background: url("./navLogo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  display:none;
+  cursor: pointer;
+}
+
+
+
+#FilterBar {
+  background-color: #171717;
+  display:flex;
+  box-shadow: 0px 10px 20px 4px rgba(0,0,0,0.5);
+
+}
+
+#sourcesList {
+  display:flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+.btn {
+  flex:1;
+  color:white;
+  display:inline-block;
+  cursor: pointer;
+  background-color: #171717;
+  padding:1em 0.5em;
+  transition: background-color 0.15s ease;
+}
+.btn:hover {
+  background-color: #6675b3;
+}
+
+.vertical-align-text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+
+#HeadlineContainer {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  padding:1em;
+  margin:auto;
+  justify-content: center;
+}
+#HeadlineContainer > a {
+  justify-self: center;
+  max-width: 600px;
+  color:initial;
+  text-decoration: none;
+  width:100%;
+}
+#HeadlineContainer > a > div{
+  height:100%;
+  display:grid;
+  background-color:#333;
+  color:white;
+
+  transition: background-color 0.15s ease;
+
+}
+
+
+#HeadlineContainer > a > div p{
+  padding:0 1em;
+  text-align: left;
+  font-size: 0.9em;
+
+}
+
+#HeadlineContainer > a > div > .image {
+  width:100%;
+  height:15em;
+  background-color: #555;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: 10%;
+  background-position-x: center;
+  overflow: hidden;
+  transition: background-size 1.1s ease-out;
+
+}
+
+#HeadlineContainer > a > div > .title {
+  font-weight: bold;
+  font-size: 1em;
+}
+#HeadlineContainer > a > div > .author {
+  margin-top:0;
+}
+
+
+
+#HeadlineContainer > a:hover > div > .image {
+  background-size: 105%;
+}
+
+
+#HeadlineContainer > a:hover > div {
+  background-color: #6675b3;
+}
+
+
+#footer {
+  color:#aaa;
+  background-color: #171717;
+  height:3em;
+
+}
+
+
+@media all and (min-width:700px) {
+  #sourcesList {
+    height: 100%;
+  }
+
+}
+
+
+@media all and (max-width:700px) {
+  #HeadlineContainer {
+    grid-template-columns: 1fr;
+  }
+
+  #HeadlineContainer > a > div > .image {
+    background-size: cover;
+  }
+
+  #headerBGImg {
+    height:0;
+  }
+
+  #FilterBar {
+    height:4em;
+    justify-content: space-between;
+  }
+
+  #logo{
+    display: inline-block;
+  }
+
+  #sourcesList {
+    flex-direction: column;
+    width:100%;
+    position:absolute;
+    top:4em;
+    height: 0;
+    overflow: hidden;
+  }
+
+  #navIcon {
+    display: inline-block;
+  }
 }
